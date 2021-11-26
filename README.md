@@ -5,6 +5,20 @@
 heroku run python tweet.py
 ```
 
+# GitHub Actionsを有効化
+以下のあたりを参考にGitHub ActionsによるCI/CDを有効化している。  
+開発→ローカルで確認→githubリポジトリにコミット、で、Herokuへのdeployが完了する。
+
+* [GitHub Actions で Heroku に自動デプロイ](https://zenn.dev/shin_shin_01/articles/53009a81728e21)    
+* [AkhileshNS/heroku-deploy](https://github.com/AkhileshNS/heroku-deploy)  
+
+`.github/workflows/deploy-to-heroku.yaml`に設定ファイルがある。  
+設定ファイル中の変数はGitHubのリポジトリ→Settings→Secrets→Repository secretsに定義しておく。  
+`HEROKU_API_KEY`はHerokuのAccount Settings→API Keyで確認できる。  
+
+
+
+
 # botの内容をherokuへ反映するとき
 ```cmd
 git add 変更を加えたファイル
